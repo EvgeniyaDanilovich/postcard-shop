@@ -1,0 +1,532 @@
+//<МИКСИНЫ>
+@import "_mixins";
+//</МИКСИНЫ>
+
+//<ШРИФТЫ>
+
+//<Подключаем шрифты>
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,regular,500,700,900");
+
+@import "_fonts";
+//font-display: swap;
+//</Подключаем шрифты>
+//<Шрифт по умолчанию>
+$fontfamily: "Roboto";
+//</Шрифт по умолчанию>
+//</ШРИФТЫ>
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+$minwidth: 320px;
+$mw: 1480;
+$md1: $mw + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+//</ПЕРЕМЕННЫЕ>==================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>
+@import "_null";
+
+body {
+	color: #212806;
+	font-size: 14px;
+	&.lock {
+		overflow: hidden;
+		@media (max-width: $md3+px) {
+		}
+	}
+}
+
+//-webkit-overflow-scrolling: touch;
+//animation-play-state: paused !important;
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>
+
+//<ОБОЛОЧКА>
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	@include flexbox();
+	flex-direction: column;
+}
+//</ОБОЛОЧКА>
+
+//<ОСНОВНАЯ СЕТКА>
+.container {
+	max-width: $mw + px;
+	margin: 0 auto;
+	padding: 0 20px;
+	@media (max-width: $md3+px) {
+		padding: 0 10px;
+	}
+}
+//</ОСНОВНАЯ СЕТКА>
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
+@import "_header";
+@import "_footer";
+@import "_pattern";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
+
+//<ОСНОВНОЙ БЛОК>
+
+.mainblock {
+	padding: 70px 0px 0px 0px;
+	flex: 1 1 auto;
+	position: relative;
+	@include flexbox();
+	.container {
+		flex: 1 1 auto;
+		height: 100%;
+	}
+
+	&__item {
+		width: 100%;
+	}
+
+	&__body {
+		height: 100%;
+		margin: 0px 0px 0px 72px;
+		position: relative;
+		z-index: 5;
+		color: #212806;
+		@include flexbox();
+		flex-direction: column;
+	}
+	&__content {
+		flex: 1 1 auto;
+		@include flexbox();
+		flex-direction: column;
+		justify-content: flex-end;
+		margin: 0px 0px 90px 0px;
+	}
+
+	&__text {
+		font-size: 16px;
+		text-transform: uppercase;
+		margin: 0px 0px 10px 0px;
+	}
+
+	&__title {
+		max-width: 540px;
+		font-size: 65px;
+		line-height: 77px;
+		margin: 0px 0px 66px 0px;
+		span {
+			font-size: 55px;
+		}
+	}
+
+	&__btn {
+	}
+
+	&__feedback {
+	}
+
+	&__bg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+}
+
+.btn-mainblock {
+	&__text {
+	}
+}
+.feedback-mainblock {
+	@include flexbox();
+	justify-content: center;
+	&__body {
+		//position: relative;
+		//z-index: 100;
+		//margin: 0px 0px -43px 0px;
+		flex: 0 1 1008px;
+		@include flexbox();
+		align-items: center;
+		justify-content: center;
+		background-color: #f5eee6;
+		height: 77px;
+	}
+
+	&__text {
+		font-size: 19px;
+	}
+
+	&__stars {
+	}
+}
+
+//====================================================
+
+.content {
+	background-color: #fff;
+	position: relative;
+	z-index: 45;
+}
+
+.bestsellers {
+	padding: 220px 0px 188px 0px;
+	&__body {
+		@include flexbox();
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__title {
+		max-width: 895px;
+		text-align: center;
+		margin: 0px 0px 63px 0px;
+	}
+
+	&__button {
+	}
+
+	&__bottom {
+		flex: 1 1 100%;
+		margin: 230px 0px 0px 0px;
+	}
+}
+
+.bottom-bestsellers {
+	padding: 0px 0px 0px 72px;
+	&__body {
+		@include flexbox();
+	}
+
+	&__column {
+	}
+
+	&__column-right {
+		flex: 0 1 25%;
+		@include flexbox();
+		flex-direction: column;
+		padding: 0px 20px 0px 0px;
+	}
+
+	&__sublitle {
+	}
+
+	&__text {
+		flex: 1 1 auto;
+	}
+
+	&__button {
+		max-width: 230px;
+	}
+}
+
+.bestsellers-slider {
+	position: relative;
+	/* Ограничивающая оболочка */
+	.slick-list {
+		overflow: hidden;
+		max-width: 1020px;
+	}
+	/* Лента слайдов */
+	.slick-track {
+		@include flexbox();
+		align-items: flex-start;
+	}
+
+	&__item {
+		text-align: center;
+	}
+
+	&__content {
+		color: #212806;
+	}
+
+	&__image {
+		margin: 0px 0px 20px 0px;
+	}
+
+	&__text {
+		font-size: 12px;
+		text-transform: uppercase;
+		margin: 0px 0px 10px 0px;
+	}
+
+	&__name {
+		font-size: 24px;
+		margin: 0px 0px 5px 0px;
+	}
+
+	&__prise {
+		font-size: 16px;
+		line-height: 28px;
+	}
+
+	.slick-arrow {
+		position: absolute;
+		top: 0;
+		margin: -45px 0px 0px 0px;
+		z-index: 10;
+		font-size: 0px;
+		color: #000;
+		width: 50px;
+		height: 25px;
+
+		&.slick-prev {
+			right: 145px;
+			background: url(/img/icons/arrow_b.svg) 0 0 no-repeat;
+			background-size: 50px 25px;
+			@include rotate(180deg);
+		}
+		&.slick-next {
+			right: 80px;
+			background: url(/img/icons/arrow_b.svg) 0 0 no-repeat;
+			background-size: 50px 25px;
+		}
+	}
+}
+
+//====================================================
+
+.reviews {
+	&__body {
+		@include flexbox();
+		background-color: #f5eee6;
+	}
+
+	&__image {
+		max-width: 576px;
+		max-height: 800px;
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__slider {
+		flex: 1 1 auto;
+	}
+}
+
+.slider-rewiews {
+	@include flexbox();
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	&__item {
+		text-align: center;
+	}
+
+	&__body {
+		padding: 100px 0px 0px 0px;
+	}
+
+	&__stars {
+		margin: 0px 0px 50px 0px;
+	}
+
+	&__text {
+		text-align: center;
+		max-width: 420px;
+		margin: 0px 0px 50px 0px;
+		max-height: 420px;
+		overflow: auto;
+		&::-webkit-scrollbar {
+			width: 2px;
+		}
+	}
+
+	&__name {
+		font-size: 13px;
+		color: #212806;
+		margin: 0px 0px 30px 0px;
+	}
+
+	/* Ограничивающая оболочка */
+	.slick-list {
+		overflow: hidden;
+		max-width: 420px;
+	}
+	/* Лента слайдов */
+	.slick-track {
+		@include flexbox();
+		align-items: flex-start;
+	}
+	.slick-dots {
+		@include flexbox();
+		justify-content: center;
+		align-items: center;
+		margin: 20px 0px 80px 0px;
+	}
+	.slick-dots li {
+		list-style: none;
+		margin: 0 10px;
+	}
+	.slick-dots li.slick-active button {
+		background-color: #000;
+	}
+	.slick-dots li button {
+		font-size: 0;
+		width: 10px;
+		height: 10px;
+		background-color: transparent;
+		border: 1px solid #000;
+		//border-radius: 50%;
+	}
+}
+
+//====================================================
+
+.transparency {
+	&__body {
+		padding: 130px 100px 170px 100px;
+		text-align: center;
+	}
+
+	&__title {
+		margin: 0px 0px 65px 0px;
+	}
+
+	&__row {
+	}
+
+	&__button {
+		margin: 90px 0px 0px 0px;
+	}
+}
+
+.row-transparency {
+	@include flexbox();
+	margin: 0px -15px;
+	&__column {
+		flex: 0 0 25%;
+		@include flexbox();
+		flex-direction: column;
+		padding: 0px 15px;
+	}
+
+	&__image {
+	}
+
+	&__text {
+		color: #212806;
+		font-size: 25px;
+		line-height: 35px;
+	}
+}
+
+//====================================================
+
+.guide {
+	&__body {
+		@include flexbox();
+		padding: 100px 144px 128px 144px;
+	}
+
+	&__column {
+		flex: 0 0 50%;
+		position: relative;
+	}
+
+	&__decor {
+		position: absolute;
+		right: -80px;
+		top: -80px;
+		animation-name: circle;
+		animation-timing-function: linear;
+		animation-duration: 15s;
+		animation-iteration-count: infinite;
+	}
+
+	&__image {
+		max-width: 576px;
+		max-height: 516px;
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+@keyframes circle {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.column-guide {
+	padding: 0px 90px 0px 0px;
+	@include flexbox();
+	flex-direction: column;
+	&__item {
+		font-size: 12px;
+		margin: 0px 0px 7px 0px;
+	}
+
+	&__title {
+		margin: 0px 0px 25px 0px;
+	}
+
+	&__text {
+		flex: 1 1 auto;
+	}
+
+	&__button {
+		margin: 20px 0px 0px 0px;
+		max-width: 200px;
+	}
+}
+
+//====================================================
+
+.products {
+	&__body {
+		padding: 100px 72px 30px 72px;
+	}
+
+	&__title {
+		margin: 0px 0px 60px 0px;
+	}
+
+	&__categories {
+	}
+}
+
+.categories-products {
+	&__body {
+		@include flexbox();
+		margin: 0px -7px;
+	}
+
+	&__column {
+		margin: 0px 0px 20px 0px;
+		padding: 0px 7px;
+	}
+
+	&__image {
+		position: relative;
+		z-index: 2;
+	}
+
+	&__item {
+		position: relative;
+		z-index: 3;
+		margin: -70px 0px 0px 0px;
+		font-size: 23px;
+		color: #212806;
+		line-height: 70px;
+		text-align: center;
+		&-1 {
+			background-color: #f9e9e0;
+		}
+		&-2 {
+			background-color: #e9edee;
+		}
+		&-3 {
+			background-color: #f5efef;
+		}
+	}
+}

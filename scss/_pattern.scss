@@ -1,0 +1,82 @@
+/*
+position:relative;
+&__bg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}*/
+
+//====================================================
+
+.ibg {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.ibg img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+}
+
+//====================================================
+
+.btn {
+	position: relative;
+	cursor: pointer;
+	z-index: 2;
+	color: #fcf8f3;
+	font-size: 15px;
+	background-color: #212806;
+	padding: 10px 80px 10px 30px;
+	border-radius: 40px;
+	display: inline-block;
+	span {
+		display: inline-block;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		right: 30px;
+		width: 30px;
+		height: 14px;
+		background-image: url(../img/icons/arrow-w.svg);
+		@include anim(0.3s, 0s);
+	}
+	&:hover::after {
+		right: 20px;
+	}
+	&__w {
+		color: #212806;
+		background-color: #fff;
+		border: 1px solid #212806;
+		&::after {
+			background-image: url(../img/icons/arrow_b.svg);
+		}
+	}
+}
+
+//====================================================
+.title {
+	color: #212806;
+	font-size: 54px;
+	line-height: 65px;
+}
+.sublitle {
+	color: #212806;
+	font-size: 40px;
+	line-height: 52px;
+}
+.text {
+	color: #212806;
+	font-size: 15px;
+	line-height: 29px;
+}
