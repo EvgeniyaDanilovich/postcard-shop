@@ -271,13 +271,13 @@ body {
 
 		&.slick-prev {
 			right: 145px;
-			background: url(/img/icons/arrow_b.svg) 0 0 no-repeat;
+			background: url(../img/icons/arrow_b.svg) 0 0 no-repeat;
 			background-size: 50px 25px;
 			@include rotate(180deg);
 		}
 		&.slick-next {
 			right: 80px;
-			background: url(/img/icons/arrow_b.svg) 0 0 no-repeat;
+			background: url(../img/icons/arrow_b.svg) 0 0 no-repeat;
 			background-size: 50px 25px;
 		}
 	}
